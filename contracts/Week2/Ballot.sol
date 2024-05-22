@@ -27,7 +27,7 @@ contract Ballot{
 
     // Initialize as a valid voter (not the chairperson and never voted before
     function register(address toVoter) public{
-        if(msg.sender!= chairperson || voters[toVoter].voted) return;
+        if(msg.sender!= chairperson || voters[toVoter].voted) {return;}
         voters[toVoter].weight = 1;
         voters[toVoter].voted = false;
     }
